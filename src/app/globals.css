@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+  .form-control {
+    @apply w-full px-3 py-2 block rounded-md border border-gray-300 placeholder-textColor text-textColor-dark focus:outline-none focus:ring-primary focus:border-primary sm:text-sm;
+  }
+
+  .form-control-sm {
+    @apply w-full px-3 py-2 block rounded-md border border-gray-300 placeholder-textColor text-textColor-dark focus:outline-none focus:ring-primary focus:border-primary sm:text-sm;
+  }
+
+  .label-control {
+    @apply block mb-1 text-sm font-medium leading-6 text-textColor-light;
+  }
+
+  .form-group {
+    @apply mb-1.5
+  }
+
+  .btn-primary {
+    @apply rounded-md bg-primary px-5 py-2 text-sm font-semibold border border-primary-dark text-white shadow-sm hover:bg-primary-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-dark
+  }
+
+  .btn-primary svg {
+    width: 0.7em;
+    height: 0.8em;
+    margin-right: 0.2em;
+    vertical-align: text-top;
+  }
+
+  .btn-default {
+    @apply rounded-md bg-white px-5 py-2 text-sm font-semibold border border-slate-300 text-textColor-light shadow-sm hover:bg-slate-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-300
+  }
+  .btn-default svg {
+    width: 0.7em;
+    height: 0.8em;
+    margin-right: 0.2em;
+    vertical-align: text-top;
+  }
+  .btn-default-sm {
+    @apply rounded-md bg-white px-1 py-1 text-sm font-semibold border border-slate-300 text-textColor-light shadow-sm hover:bg-slate-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-300
+  }
+  .btn-default-icon {
+    @apply rounded-md bg-white px-2 py-2 text-sm font-semibold border border-slate-300 text-textColor-light shadow-sm hover:bg-slate-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-300
+  }
+  .btn-default-icon svg{
+    width: 0.7em;
+    height: 0.8em;
+    vertical-align: text-top;
+  }
+  .navbar{
+    height: calc(100vh - 2.5rem);
+  }
+  .navbar .nav-link {
+    @apply py-2 px-3 my-2 rounded-md
+  }
+
+  .navbar .nav-link-active {
+    @apply bg-primary text-white
+  }
+
+  .panel {
+    @apply bg-white rounded-md shadow-sm
+  }
+
+  .dropdown {
+    @apply relative inline-block text-left;
+  }
+
+  .dropdown-toggle-icon {
+    @apply gap-x-1.5 p-1 rounded-md bg-white text-sm font-semibold text-gray-500 hover:bg-gray-100
+  }
+
+  .dropdown-menu {
+    @apply absolute right-0 z-10 mt-2 w-40 py-1 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none
+  }
+
+  .dropdown-item {
+    @apply text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100
+  }
+
+  .dropdown-item svg {
+    width: 0.7em;
+    height: 0.8em;
+    margin-right: 0.2em;
+    vertical-align: text-top;
+  }
+}
