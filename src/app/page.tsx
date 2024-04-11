@@ -1,4 +1,5 @@
 "use client"
+import { useRouter } from "next/navigation";
 import Link from 'next/link';
 import { ControlPointOutlined, MoreVertOutlined, EditOutlined, DeleteOutlineOutlined, SearchOutlined } from '@mui/icons-material';
 import { useEffect, useState } from 'react';
@@ -20,13 +21,14 @@ const getAllBooks = async () => {
 }
 
 const deleteBookById = async (id: string) => {
-  const res = await fetch(`http://localhost:3000/api/books/${id}`, {
+  const res = await fetch(`${ process.env.NEXT_PUBLIC_API }/books/${id}`, {
     method:"DELETE"
   });
   return (await res).json();
 }
 
 export default function Home() {
+  const router = useRouter();
   const [books, setBooks] = useState<Book[]>([]);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const fetchBooks = async () => {
@@ -36,7 +38,7 @@ export default function Home() {
 
   useEffect(() => {
     fetchBooks();
-  }, [books]
+  }, []
   )
 
   const toggleDropdown = (index: string) => {
@@ -59,6 +61,7 @@ export default function Home() {
   const handleDelete = async(id: string) => {
     const res = await deleteBookById(id);
     toast.success(res.message);
+    fetchBooks();
   }
   return (
     <>

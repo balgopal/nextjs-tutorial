@@ -24,12 +24,12 @@ type Book = {
 }
 
 const getBookById = async (id: string) => {
-    const res = await fetch(`http://localhost:3000/api/books/${id}`)
+    const res = await fetch(`${ process.env.NEXT_PUBLIC_API }/books/${id}`)
     return (await res).json();
 }
 
 const editBook = async (data: Book, id: string) => {
-    const res = await fetch(`http://localhost:3000/api/books/${id}`, {
+    const res = await fetch(`${ process.env.NEXT_PUBLIC_API }/books/${id}`, {
         method: 'PUT',
         body: JSON.stringify(data)
     })
